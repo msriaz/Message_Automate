@@ -5,7 +5,7 @@ import RoundedButton from '../../App/Components/RoundedButton'
 import PresentationScreen from './PresentationScreen'
 
 export default class DevscreensButton extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       showModal: false
@@ -16,12 +16,12 @@ export default class DevscreensButton extends React.Component {
     this.setState({ showModal: !this.state.showModal })
   }
 
-  render () {
-    if (DebugConfig.showDevScreens) {
+  render() {
+    if (DebugConfig.showDevScreens || 1) {
       return (
         <View>
           <RoundedButton onPress={this.toggleModal}>
-            Open DevScreens
+            TELEPSYCHIATRY THEME
           </RoundedButton>
           <Modal
             visible={this.state.showModal}

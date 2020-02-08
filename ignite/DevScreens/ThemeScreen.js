@@ -14,43 +14,43 @@ const types = R.keys(Fonts.type)
 const fontStyles = R.keys(Fonts.style)
 
 export default class ThemeScreen extends React.Component {
-  renderColor (color: string) {
+  renderColor(color: string) {
     return (
       <View style={styles.colorContainer} key={`${color}Container`}>
         <View style={styles.backgroundContainer} key={`${color}BackgroundContainer`}>
           <Image style={styles.backerImage} source={Images.tileBg} key={`${color}BackgroundImage`} />
-          <View style={[styles.colorSquare, {backgroundColor: Colors[color]}]} key={`${color}Square`} />
+          <View style={[styles.colorSquare, { backgroundColor: Colors[color] }]} key={`${color}Square`} />
         </View>
         <Text style={styles.colorName} key={`${color}Text`}>{color}</Text>
       </View>
     )
   }
 
-  renderColors () {
+  renderColors() {
     return colors.map((color) => this.renderColor(color))
   }
 
-  renderFont (font: string) {
+  renderFont(font: string) {
     return (
-      <Text style={[styles.fontRow, {fontFamily: Fonts.type[font]}]} key={font}>{
+      <Text style={[styles.fontRow, { fontFamily: Fonts.type[font] }]} key={font}>{
         `${font}: ${Fonts.type[font]}`
       }</Text>
     )
   }
 
-  renderFonts () {
+  renderFonts() {
     return types.map((font) => this.renderFont(font))
   }
 
-  renderStyle (fontStyle: string) {
-    return (<Text style={[styles.fontRow, {...Fonts.style[fontStyle]}]} key={fontStyle}>{`This is ${fontStyle} style`}</Text>)
+  renderStyle(fontStyle: string) {
+    return (<Text style={[styles.fontRow, { ...Fonts.style[fontStyle] }]} key={fontStyle}>{`This is ${fontStyle} style`}</Text>)
   }
 
-  renderStyles () {
+  renderStyles() {
     return fontStyles.map((fontStyle) => this.renderStyle(fontStyle))
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
@@ -64,12 +64,12 @@ export default class ThemeScreen extends React.Component {
         </TouchableOpacity>
         <ScrollView style={styles.container}>
           <View style={styles.scrollContent}>
-            <View style={{alignItems: 'center', paddingTop: 60}}>
+            <View style={{ alignItems: 'center', paddingTop: 60 }}>
               <Image source={Images.theme} style={styles.logo} />
-              <Text style={styles.titleText}>Themes</Text>
+              <Text style={styles.titleText}>Colors and Fonts</Text>
             </View>
             <View style={styles.section} key='colors-header'>
-              <Text style={styles.sectionText} key='colors'>List of Theme specific settings.  Auto-generated from Themes folder.</Text>
+              <Text style={styles.sectionText} key='colors'>  Here is the example of Colors and Fonts going to be used for TELEPSYCHIATRY</Text>
             </View>
             <View style={styles.sectionHeaderContainer}>
               <Text style={styles.sectionHeader}>Colors</Text>

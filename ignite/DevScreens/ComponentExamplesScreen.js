@@ -8,7 +8,7 @@ import styles from './Styles/ComponentExamplesScreenStyles'
 import ExamplesRegistry from '../../App/Services/ExamplesRegistry'
 
 class ComponentExamplesScreen extends React.Component {
-  renderAndroidWarning () {
+  renderAndroidWarning() {
     if (Platform.OS === 'android') {
       return (
         <Text style={styles.sectionText}>
@@ -20,10 +20,10 @@ class ComponentExamplesScreen extends React.Component {
     return null
   }
 
-  render () {
+  render() {
     return (
       <View style={[styles.container, styles.mainContainer]}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
+        {/* <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' /> */}
         <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{
           position: 'absolute',
           paddingTop: 30,
@@ -34,16 +34,14 @@ class ComponentExamplesScreen extends React.Component {
         </TouchableOpacity>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
           <View style={styles.scrollContent}>
-            <View style={{alignItems: 'center', paddingTop: 60}}>
+            <View style={{ alignItems: 'center', paddingTop: 60 }}>
               <Image source={Images.components} style={styles.logo} />
-              <Text style={styles.titleText}>Components</Text>
+              <Text style={styles.titleText}>Appointment</Text>
             </View>
             <View style={styles.description}>
               {this.renderAndroidWarning()}
               <Text style={styles.sectionText}>
-                Sometimes called a 'Style Guide', or 'Pattern Library', Examples Screen is filled with usage examples
-                of fundamental components for a given application.  Use this merge-friendly way for your team
-                to show/use/test components.  Examples are registered inside each component's file for quick changes and usage identification.
+                Here is the example of Appointment Buttons going to be used for TELEPSYCHIATRY
               </Text>
             </View>
 

@@ -6,32 +6,32 @@ import { Metrics, Images } from './DevTheme'
 import styles from './Styles/DeviceInfoScreenStyles'
 
 const HARDWARE_DATA = [
-  {title: 'Device Manufacturer', info: DeviceInfo.getManufacturer()},
-  {title: 'Device Name', info: DeviceInfo.getDeviceName()},
-  {title: 'Device Model', info: DeviceInfo.getModel()},
-  {title: 'Device Unique ID', info: DeviceInfo.getUniqueID()},
-  {title: 'Device Locale', info: DeviceInfo.getDeviceLocale()},
-  {title: 'Device Country', info: DeviceInfo.getDeviceCountry()},
-  {title: 'User Agent', info: DeviceInfo.getUserAgent()},
-  {title: 'Screen Width', info: Metrics.screenWidth},
-  {title: 'Screen Height', info: Metrics.screenHeight}
+  { title: 'Device Manufacturer', info: DeviceInfo.getManufacturer() },
+  { title: 'Device Name', info: DeviceInfo.getDeviceName() },
+  { title: 'Device Model', info: DeviceInfo.getModel() },
+  { title: 'Device Unique ID', info: DeviceInfo.getUniqueId() },
+  // { title: 'Device Locale', info: DeviceInfo.getDeviceLocale() },
+  // { title: 'Device Country', info: DeviceInfo.getDeviceCountry() },
+  { title: 'User Agent', info: DeviceInfo.getUserAgent() },
+  { title: 'Screen Width', info: Metrics.screenWidth },
+  { title: 'Screen Height', info: Metrics.screenHeight }
 ]
 
 const OS_DATA = [
-  {title: 'Device System Name', info: DeviceInfo.getSystemName()},
-  {title: 'Device ID', info: DeviceInfo.getDeviceId()},
-  {title: 'Device Version', info: DeviceInfo.getSystemVersion()}
+  { title: 'Device System Name', info: DeviceInfo.getSystemName() },
+  { title: 'Device ID', info: DeviceInfo.getDeviceId() },
+  { title: 'Device Version', info: DeviceInfo.getSystemVersion() }
 ]
 
 const APP_DATA = [
-  {title: 'Bundle Id', info: DeviceInfo.getBundleId()},
-  {title: 'Build Number', info: DeviceInfo.getBuildNumber()},
-  {title: 'App Version', info: DeviceInfo.getVersion()},
-  {title: 'App Version (Readable)', info: DeviceInfo.getReadableVersion()}
+  { title: 'Bundle Id', info: DeviceInfo.getBundleId() },
+  { title: 'Build Number', info: DeviceInfo.getBuildNumber() },
+  { title: 'App Version', info: DeviceInfo.getVersion() },
+  { title: 'App Version (Readable)', info: DeviceInfo.getReadableVersion() }
 ]
 
 export default class DeviceInfoScreen extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -41,7 +41,7 @@ export default class DeviceInfoScreen extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     NetInfo.isConnected.addEventListener('connectionChange', this.setConnected)
     NetInfo.isConnected.fetch().done(this.setConnected)
     NetInfo.addEventListener('connectionChange', this.setConnectionInfo)
@@ -60,35 +60,35 @@ export default class DeviceInfoScreen extends React.Component {
     // })
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     NetInfo.isConnected.removeEventListener('connectionChange', this.setConnected)
     NetInfo.removeEventListener('connectionChange', this.setConnectionInfo)
     NetInfo.removeEventListener('connectionChange', this.updateConnectionInfoHistory)
   }
 
   setConnected = (isConnected) => {
-    this.setState({isConnected})
+    this.setState({ isConnected })
   }
 
   setConnectionInfo = (connectionInfo) => {
-    this.setState({connectionInfo})
+    this.setState({ connectionInfo })
   }
 
   updateConnectionInfoHistory = (connectionInfo) => {
     const connectionInfoHistory = this.state.connectionInfoHistory.slice()
     connectionInfoHistory.push(connectionInfo)
-    this.setState({connectionInfoHistory})
+    this.setState({ connectionInfoHistory })
   }
 
-  netInfo () {
+  netInfo() {
     return ([
-      {title: 'Connection', info: (this.state.isConnected ? 'Online' : 'Offline')},
-      {title: 'Connection Info', info: JSON.stringify(this.state.connectionInfo)},
-      {title: 'Connection Info History', info: JSON.stringify(this.state.connectionInfoHistory)}
+      { title: 'Connection', info: (this.state.isConnected ? 'Online' : 'Offline') },
+      { title: 'Connection Info', info: JSON.stringify(this.state.connectionInfo) },
+      { title: 'Connection Info History', info: JSON.stringify(this.state.connectionInfoHistory) }
     ])
   }
 
-  renderCard (cardTitle, rowData) {
+  renderCard(cardTitle, rowData) {
     return (
       <View>
         <View style={styles.sectionHeaderContainer}>
@@ -100,9 +100,9 @@ export default class DeviceInfoScreen extends React.Component {
     )
   }
 
-  renderRows (rowData) {
+  renderRows(rowData) {
     return rowData.map((cell) => {
-      const {title, info} = cell
+      const { title, info } = cell
       return (
         <View key={title} style={styles.rowContainer}>
           <View style={styles.rowLabelContainer}>
@@ -116,7 +116,7 @@ export default class DeviceInfoScreen extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
@@ -130,7 +130,7 @@ export default class DeviceInfoScreen extends React.Component {
         </TouchableOpacity>
         <ScrollView style={styles.container}>
           <View style={styles.scrollContent}>
-            <View style={{alignItems: 'center', paddingTop: 60}}>
+            <View style={{ alignItems: 'center', paddingTop: 60 }}>
               <Image source={Images.deviceInfo} style={styles.logo} />
               <Text style={styles.titleText}>Device Info</Text>
             </View>
@@ -139,7 +139,7 @@ export default class DeviceInfoScreen extends React.Component {
                 Dedicated to identifying specifics of the device.  All info useful for identifying outlying behaviour specific to a device.
               </Text>
             </View>
-            <View style={{padding: 10}}>
+            <View style={{ padding: 10 }}>
               {this.renderCard('Device Hardware', HARDWARE_DATA)}
               {this.renderCard('Device OS', OS_DATA)}
               {this.renderCard('App Info', APP_DATA)}

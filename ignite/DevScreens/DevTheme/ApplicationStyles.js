@@ -9,7 +9,7 @@ const ApplicationStyles = {
   screen: {
     mainContainer: {
       flex: 1,
-      backgroundColor: Colors.transparent
+      backgroundColor: 'white',//Colors.transparent
     },
     backgroundImage: {
       position: 'absolute',
@@ -21,7 +21,7 @@ const ApplicationStyles = {
     container: {
       flex: 1,
       paddingTop: Metrics.baseMargin,
-      backgroundColor: Colors.transparent
+      backgroundColor: 'white'//Colors.transparent
     },
     scrollContent: {
       paddingBottom: 18

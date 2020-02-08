@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009DDADC2F4041FEB6706559 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20AE79186BB4C6483BD3F2E /* Zocial.ttf */; };
 		00E356F31AD99517003FC87E /* TelepsychiatryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TelepsychiatryTests.m */; };
+		12113047B2F94EED8E9019B6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8715CABEAA4C48208C288EA5 /* Octicons.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		17FF179173D74231A49C8ABA /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A247E77FB5354CE8B538863E /* FontAwesome5_Regular.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TelepsychiatryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TelepsychiatryTests.m */; };
 		364D6D7936A01517811AF1E7 /* libPods-Telepsychiatry-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22341F77511531F5F2F334B9 /* libPods-Telepsychiatry-tvOS.a */; };
+		48AE44765192478AAC0DAC2A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC11E4DBC4C547FAAFECC750 /* Feather.ttf */; };
+		4C15E942C5A949E4AB2FA0C6 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39304827728B447A87EDF78A /* Ionicons.ttf */; };
+		5AC3AD22572E4A77AA1592E9 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988469D3A2424DD296720974 /* FontAwesome5_Brands.ttf */; };
+		69832E4A214345DFA6F84E05 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF585738D4CA4B67222EC /* FontAwesome.ttf */; };
+		7686A2026F9146F2845FC8AA /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9FADD17C240F196D07410 /* Foundation.ttf */; };
+		7B87B468C9D4495E9EE9FB4C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23B5C2C0052A43C491DCAEA6 /* MaterialIcons.ttf */; };
+		8109E77541644531BEB5BB19 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F9352CA635E4FA5A7C72D32 /* SimpleLineIcons.ttf */; };
 		879638EDE4DC12946EC42ACE /* libPods-Telepsychiatry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F409287116E6DC481D4F235 /* libPods-Telepsychiatry.a */; };
+		9C88BDB3A58841998A17EFF4 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2C70414EE89473784272423 /* EvilIcons.ttf */; };
+		9FE3D49F4B9747CA80A4FA31 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 964FC0D6DB564E729F38E2DE /* Entypo.ttf */; };
+		A2DF81AC205D4B988C47501A /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3074529A3D7944199FCD9006 /* AntDesign.ttf */; };
 		ACA985B79626A2325618FC56 /* libPods-TelepsychiatryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EABE34A286568519681562D8 /* libPods-TelepsychiatryTests.a */; };
 		C196CED6002C1DBA1D75A55A /* libPods-Telepsychiatry-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5F52F9378C250C7A520F57 /* libPods-Telepsychiatry-tvOSTests.a */; };
-		A2DF81AC205D4B988C47501A /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3074529A3D7944199FCD9006 /* AntDesign.ttf */; };
-		9FE3D49F4B9747CA80A4FA31 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 964FC0D6DB564E729F38E2DE /* Entypo.ttf */; };
-		9C88BDB3A58841998A17EFF4 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2C70414EE89473784272423 /* EvilIcons.ttf */; };
-		48AE44765192478AAC0DAC2A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC11E4DBC4C547FAAFECC750 /* Feather.ttf */; };
-		69832E4A214345DFA6F84E05 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF585738D4CA4B67222EC /* FontAwesome.ttf */; };
-		5AC3AD22572E4A77AA1592E9 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988469D3A2424DD296720974 /* FontAwesome5_Brands.ttf */; };
-		17FF179173D74231A49C8ABA /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A247E77FB5354CE8B538863E /* FontAwesome5_Regular.ttf */; };
-		DCE162CDF8554B9582F80762 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A201BBE9E732423D8922E667 /* FontAwesome5_Solid.ttf */; };
-		7686A2026F9146F2845FC8AA /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9FADD17C240F196D07410 /* Foundation.ttf */; };
-		4C15E942C5A949E4AB2FA0C6 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39304827728B447A87EDF78A /* Ionicons.ttf */; };
 		CEB2A1B3619643DA90997A20 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDB25306E75B49CEAABD7EA8 /* MaterialCommunityIcons.ttf */; };
-		7B87B468C9D4495E9EE9FB4C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23B5C2C0052A43C491DCAEA6 /* MaterialIcons.ttf */; };
-		12113047B2F94EED8E9019B6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8715CABEAA4C48208C288EA5 /* Octicons.ttf */; };
-		8109E77541644531BEB5BB19 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F9352CA635E4FA5A7C72D32 /* SimpleLineIcons.ttf */; };
-		009DDADC2F4041FEB6706559 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20AE79186BB4C6483BD3F2E /* Zocial.ttf */; };
+		DCE162CDF8554B9582F80762 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A201BBE9E732423D8922E667 /* FontAwesome5_Solid.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,36 +67,36 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Telepsychiatry/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Telepsychiatry/main.m; sourceTree = "<group>"; };
 		22341F77511531F5F2F334B9 /* libPods-Telepsychiatry-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telepsychiatry-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B5C2C0052A43C491DCAEA6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Telepsychiatry-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telepsychiatry-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Telepsychiatry-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telepsychiatry-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3074529A3D7944199FCD9006 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		32647B959571EAB56CD702B1 /* Pods-Telepsychiatry-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry-tvOS/Pods-Telepsychiatry-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		39304827728B447A87EDF78A /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		4FA9FADD17C240F196D07410 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		5DB91863155C16CC3AFC0E15 /* Pods-TelepsychiatryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelepsychiatryTests.release.xcconfig"; path = "Target Support Files/Pods-TelepsychiatryTests/Pods-TelepsychiatryTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F9352CA635E4FA5A7C72D32 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		71DA804939B7762E30A67DFD /* Pods-TelepsychiatryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelepsychiatryTests.debug.xcconfig"; path = "Target Support Files/Pods-TelepsychiatryTests/Pods-TelepsychiatryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F409287116E6DC481D4F235 /* libPods-Telepsychiatry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telepsychiatry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8715CABEAA4C48208C288EA5 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		9091AC17746DEC3C4A0D2A06 /* Pods-Telepsychiatry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry.debug.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry/Pods-Telepsychiatry.debug.xcconfig"; sourceTree = "<group>"; };
+		964FC0D6DB564E729F38E2DE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		96821034399288D1AA9C1AAB /* Pods-Telepsychiatry-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry-tvOS/Pods-Telepsychiatry-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		988469D3A2424DD296720974 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		A201BBE9E732423D8922E667 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		A20AE79186BB4C6483BD3F2E /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		A247E77FB5354CE8B538863E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		A3A4516BD68693CEE0E2191C /* Pods-Telepsychiatry-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry-tvOSTests/Pods-Telepsychiatry-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB5F52F9378C250C7A520F57 /* libPods-Telepsychiatry-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telepsychiatry-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDB25306E75B49CEAABD7EA8 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		CBEFF585738D4CA4B67222EC /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		E2C70414EE89473784272423 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		EABE34A286568519681562D8 /* libPods-TelepsychiatryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TelepsychiatryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC11E4DBC4C547FAAFECC750 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F1E93B74E55BA65655C812C3 /* Pods-Telepsychiatry-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry-tvOSTests/Pods-Telepsychiatry-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F25629235E2223A73C3BDD90 /* Pods-Telepsychiatry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telepsychiatry.release.xcconfig"; path = "Target Support Files/Pods-Telepsychiatry/Pods-Telepsychiatry.release.xcconfig"; sourceTree = "<group>"; };
-		3074529A3D7944199FCD9006 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		964FC0D6DB564E729F38E2DE /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E2C70414EE89473784272423 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EC11E4DBC4C547FAAFECC750 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CBEFF585738D4CA4B67222EC /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		988469D3A2424DD296720974 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A247E77FB5354CE8B538863E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A201BBE9E732423D8922E667 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4FA9FADD17C240F196D07410 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		39304827728B447A87EDF78A /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BDB25306E75B49CEAABD7EA8 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		23B5C2C0052A43C491DCAEA6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8715CABEAA4C48208C288EA5 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5F9352CA635E4FA5A7C72D32 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A20AE79186BB4C6483BD3F2E /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 			sourceTree = "<group>";
 		};
 		F2D30CF2138D4C4181185EB6 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				3074529A3D7944199FCD9006 /* AntDesign.ttf */,
 				964FC0D6DB564E729F38E2DE /* Entypo.ttf */,
@@ -249,8 +249,8 @@
 				A20AE79186BB4C6483BD3F2E /* Zocial.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -284,6 +284,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				058F9BC66198C1EE55BF5A13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -462,6 +463,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		058F9BC66198C1EE55BF5A13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Telepsychiatry/Pods-Telepsychiatry-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Telepsychiatry/Pods-Telepsychiatry-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {

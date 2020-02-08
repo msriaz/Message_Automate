@@ -3,7 +3,8 @@
 // As to not break the automated addition/subtractions.
 import React from 'react'
 import { View, ScrollView, Text, TouchableOpacity, Image } from 'react-native'
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation'
 import { Images } from './DevTheme'
 
 // Examples Render Engine
@@ -15,10 +16,10 @@ import '../Examples/Components/vectorExample.js'
 import styles from './Styles/PluginExamplesScreenStyles'
 
 class PluginExamplesScreen extends React.Component {
-  render () {
+  render() {
     return (
       <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
+        {/* <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' /> */}
         <TouchableOpacity onPress={() => this.props.navigation.goBack(null)} style={{
           position: 'absolute',
           paddingTop: 30,
@@ -29,14 +30,13 @@ class PluginExamplesScreen extends React.Component {
         </TouchableOpacity>
         <ScrollView style={styles.container}>
           <View style={styles.scrollContent}>
-            <View style={{alignItems: 'center', paddingTop: 60}}>
+            <View style={{ alignItems: 'center', paddingTop: 60 }}>
               <Image source={Images.usageExamples} style={styles.logo} />
-              <Text style={styles.titleText}>Plugin Examples</Text>
+              <Text style={styles.titleText}>Animation and Icons</Text>
             </View>
             <View style={styles.section}>
               <Text style={styles.sectionText} >
-                The Plugin Examples screen is a playground for 3rd party libs and logic proofs.
-                Items on this screen can be composed of multiple components working in concert.  Functionality demos of libs and practices
+                Here is the example of animations and icons going to be used for TELEPSYCHIATRY
               </Text>
             </View>
 
@@ -51,7 +51,7 @@ class PluginExamplesScreen extends React.Component {
 }
 
 const stackNavigator = createStackNavigator({
-  PluginExamplesScreen: {screen: PluginExamplesScreen}
+  PluginExamplesScreen: { screen: PluginExamplesScreen }
 }, {
   cardStyle: {
     opacity: 1,
