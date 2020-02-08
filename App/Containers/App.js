@@ -1,9 +1,22 @@
 import '../Config'
 import DebugConfig from '../Config/DebugConfig'
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import { Provider as StoreProvider } from 'react-redux'
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import { Colors } from "../Themes";
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#66adea',
+    secondary: "#414757",
+    success: "#00B386",
+    error: 'rgba(200, 0, 0, 0.8)',
+  },
+};
 
 // create our store
 const store = createStore()
@@ -20,9 +33,11 @@ const store = createStore()
 class App extends Component {
   render () {
     return (
-      <Provider store={store}>
-        <RootContainer />
-      </Provider>
+      <StoreProvider store={store}>
+        <PaperProvider theme={theme}>
+          <RootContainer />
+        </PaperProvider>
+      </StoreProvider>
     )
   }
 }
