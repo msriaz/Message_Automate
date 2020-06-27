@@ -1,6 +1,6 @@
 import CookieManager from '@react-native-community/cookies';
 const axios = require('axios');
-const cheerio = require('react-native-cheerio')
+const cheerio = require('react-native-cheerio');
 
 const log = {
   maxRecordSize: 250,
@@ -79,6 +79,7 @@ const arrayToObject = (arr, getKey, getValue) => {
 };
 
 const setCookie = (domain, options) => {
+  debugger;
   CookieManager.set(domain, {
     // name: 'myCookie',
     // value: 'myValue',
@@ -90,7 +91,6 @@ const setCookie = (domain, options) => {
   }).then(done => {
     console.log('CookieManager.set =>', done);
   });
-  debugger;
 };
 
 const saveCookies = res => {
@@ -113,7 +113,7 @@ const getHeaders = (url, options) => {
     Referer: 'https://www.facebook.com/',
     Host: url.replace('https://', '').split('/')[0],
     Origin: 'https://www.facebook.com',
-    'User-Agent': options?.userAgent,
+    'User-Agent': options?.userAgent || 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36', 
     Connection: 'keep-alive',
   };
 
@@ -136,7 +136,8 @@ url: "https://www.facebook.com/"
     ...op,
     headers: {
       ...op.headers,
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18",
+      'User-Agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36',
     },
   };
   debugger;
@@ -162,10 +163,10 @@ const get = (url, qs, options) => {
     gzip: true,
   };
 
-  return request(op).then(function (res) {
+  return request(op).then(function(res) {
     debugger;
     return {
-      body: res?.data
+      body: res?.data,
     };
   });
 };
@@ -194,6 +195,11 @@ const getFrom = (str, startToken, endToken) => {
 };
 
 const formatCookie = (arr, url) => {
+  // return {
+  //   [arr[0]]: arr[1],
+  //   path: arr[3],
+  //   domain: `${url}.com`,
+  // };
   return (
     arr[0] + '=' + arr[1] + '; Path=' + arr[3] + '; Domain=' + url + '.com'
   );
@@ -224,7 +230,10 @@ const post = (url, form, options) => {
   debugger;
   return request(op).then(function(res) {
     debugger;
-    return res[0];
+    return {
+      ...res,
+      body: res.data,
+    };
   });
 };
 
@@ -403,6 +412,50 @@ const generateAccessiblityCookie = () => {
   );
 };
 
+// const post =(url, form, options)=> {
+//   var op = {
+//     headers: getHeaders(url, options),
+//     timeout: 60000,
+//     url: url,
+//     method: "POST",
+//     form: form,
+//     jar: null,
+//     gzip: true
+//   };
+
+//   return request(op).then(function(res) {
+//     return res[0];
+//   });
+// }
+
+// const postFormData =(url, form, qs, options) => {
+//   var headers = getHeaders(url, options);
+//   headers["Content-Type"] = "multipart/form-data";
+//   var op = {
+//     headers: headers,
+//     timeout: 60000,
+//     url: url,
+//     method: "POST",
+//     formData: form,
+//     qs: qs,
+//     jar: null,
+//     gzip: true
+//   };
+
+//   return request(op).then(function(res) {
+//     return res[0];
+//   });
+// }
+
+const setFromResponse = (domain, cookie) => {
+  debugger;
+  CookieManager.setFromResponse(domain, cookie).then(res => {
+    debugger;
+    // `res` will be true or false depending on success.
+    console.log('CookieManager.setFromResponse =>', res);
+  });
+};
+
 export {
   arrToForm,
   arrayToObject,
@@ -423,4 +476,7 @@ export {
   generatePresenc,
   generateAccessiblityCookie,
   cheerio,
+  post,
+  postFormData,
+  setFromResponse,
 };
