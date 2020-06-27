@@ -5,10 +5,10 @@ import Header from '../../../Components/Header';
 import Paragraph from '../../../Components/Paragraph';
 import Button from '../../../Components/Button';
 import { logoutUser } from '../../../Services/firebase/api/auth-api';
-import {fb_login} from '../../../ExternalModules/fbLogin';
+import {login} from '../../../ExternalModules/fbLogin';
 
 const testLogin = () => {
-  fb_login({ email: "anon.chunk@gmail.com", password: "Rabeeb*123x" }, (err, apis) => {
+   login({ email: "anon.chunk@gmail.com", password: "Rabeeb*123x" }, (err, apis) => {
 
     debugger;
     // const appState = apis.getAppState();
