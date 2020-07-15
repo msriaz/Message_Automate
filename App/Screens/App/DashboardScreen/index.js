@@ -6,31 +6,41 @@ import Paragraph from '../../../Components/Paragraph';
 import Button from '../../../Components/Button';
 import { logoutUser } from '../../../Services/firebase/api/auth-api';
 import {login} from '../../../ExternalModules/fbLogin';
+import CookieManager from '@react-native-community/cookies';
 
 const testLogin = () => {
-   login({ email: "anon.chunk@gmail.com", password: "Rabeeb*123x" }, (err, apis) => {
-
+  CookieManager.getAll().then(cookies => {
+    console.log('CookieManager.getAll =>', cookies);
     debugger;
-    // const appState = apis.getAppState();
-    // console.log('@@@@@@@@@@@@@@@@app state is', appState);
-    // if (err) {
-    //     debugger;
-    //     res.send(err);
-    //     return console.error(err);
-    // }
+  });
 
-    // apis.listenMqtt((err, message) => {
-    //     res.send('Logged in successfully')
-    //     // apis.sendMessage(message.body, message.threadID);
-    // });
-    // apis.getFriendsList((err, data) => {
-    //     if(err) return console.error(err);
-    //     // var yourID = "000000000000000";
-    //     var msg = { body: "Hey Shoaib this message is just for hellow :D" };
-    //     apis.sendMessage(msg, data[0].userID);
-    //     console.log('friendlist is', data.length, data);
-    // });
-});
+//    login({ email: "anon.chunk@gmail.com", password: "Rabeeb*123x" }, (err, apis) => {
+
+//     CookieManager.getAll().then(cookies => {
+//       console.log('CookieManager.getAll =>', cookies);
+//       debugger;
+//     });
+//     debugger;
+//     // const appState = apis.getAppState();
+//     // console.log('@@@@@@@@@@@@@@@@app state is', appState);
+//     // if (err) {
+//     //     debugger;
+//     //     res.send(err);
+//     //     return console.error(err);
+//     // }
+
+//     // apis.listenMqtt((err, message) => {
+//     //     res.send('Logged in successfully')
+//     //     // apis.sendMessage(message.body, message.threadID);
+//     // });
+//     // apis.getFriendsList((err, data) => {
+//     //     if(err) return console.error(err);
+//     //     // var yourID = "000000000000000";
+//     //     var msg = { body: "Hey Shoaib this message is just for hellow :D" };
+//     //     apis.sendMessage(msg, data[0].userID);
+//     //     console.log('friendlist is', data.length, data);
+//     // });
+// });
 }
 // Create simple echo bot
 

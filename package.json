@@ -23,8 +23,7 @@
     "storybook": "storybook start -p 7007",
     "lintdiff": "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
     "fixcode": "standard --fix",
-    "git-hook": "npm run lint -s && npm run test -s",
-    "postinstall": "rn-nodeify --install stream,process,util --hack"
+    "git-hook": "npm run lint -s && npm run test -s"
   },
   "browser": {
     "net": "react-native-tcp"
@@ -33,6 +32,7 @@
     "@react-native-community/cookies": "^3.0.0",
     "apisauce": "^1.1.1",
     "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
     "buffer": "^5.6.0",
     "crypto-js": "^4.0.0",
     "firebase": "^7.8.0",
@@ -51,6 +51,7 @@
     "react-native-cheerio": "^1.0.0-rc.4",
     "react-native-config": "^0.12.0",
     "react-native-device-info": "^5.4.4",
+    "react-native-fbsdk": "^1.1.2",
     "react-native-form-builder": "^1.0.16",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-mqtt-client": "^0.0.1",
@@ -62,6 +63,7 @@
     "react-native-vector-icons": "6.1.0",
     "react-native-web": "^0.12.1",
     "react-native-websocket": "^1.0.2",
+    "react-native-webview": "8.0.0",
     "react-navigation": "^4.1.0",
     "react-navigation-redux-helpers": "^4.0.1",
     "react-navigation-stack": "^1.10.3",

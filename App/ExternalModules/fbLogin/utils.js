@@ -5,6 +5,9 @@ const cheerio = require('react-native-cheerio');
 const log = {
   maxRecordSize: 250,
   level: 'top',
+  verbose: (a, b) => {
+    console.log(a, b);
+  },
   warn: (a, b) => {
     console.warn(a, b);
   },
@@ -14,6 +17,31 @@ const log = {
   error: (a, b) => {
     console.error(a, b);
   },
+};
+
+const cookiesStringArray = cookies => {
+  let cookiesStrings = Object.keys(cookies)?.map(key1 => {
+    let cookieString = `${key1}=${cookies[key1].value}; `;
+    Object.keys(cookies[key1])?.forEach(key2 => {
+      if (key2 !== 'name' && key2 !== 'value') {
+        cookieString += `${key2}=${cookies[key1][key2]}; `;
+      }
+    });
+    return cookieString;
+  });
+
+  const cookieKeys = ['fr', 'sb', 'c_user', 'xs', 'spin', 'presence', 'locale'];
+  let cookiesStringArrayUpdated = [...cookiesStrings];
+  cookiesStrings.forEach(function(c) {
+    const key = c.split('=')[0];
+    if (cookieKeys.indexOf(key) !== -1) {
+      var c2 = c.replace(/domain=\.facebook\.com/, 'domain=.messenger.com');
+      // c2 = `meesenger_${c2}`;
+      cookiesStringArrayUpdated.push(c2);
+    }
+  });
+
+  return cookiesStringArrayUpdated;
 };
 
 var h;
@@ -78,9 +106,10 @@ const arrayToObject = (arr, getKey, getValue) => {
   }, {});
 };
 
-const setCookie = (domain, options) => {
-  debugger;
-  CookieManager.set(domain, {
+const setCookie = async (domain, options) => {
+  // debugger;
+  console.log('set cookies', options);
+  const setCookieResponse = await CookieManager.set(domain, {
     // name: 'myCookie',
     // value: 'myValue',
     // domain: 'some domain',
@@ -88,23 +117,26 @@ const setCookie = (domain, options) => {
     // version: '1',
     // expires: '2015-05-30T12:30:00.00-05:00',
     ...options,
-  }).then(done => {
-    console.log('CookieManager.set =>', done);
   });
+  console.log('CookieManager.set =>', setCookieResponse);
+  return setCookieResponse;
 };
 
-const saveCookies = res => {
-  return function(res) {
-    var cookies = res.headers['set-cookie'] || [];
-    cookies.forEach(function(c) {
-      if (c.indexOf('.facebook.com') > -1) {
-        setCookie(c, 'https://www.facebook.com');
-      }
-      var c2 = c.replace(/domain=\.facebook\.com/, 'domain=.messenger.com');
-      setCookie(c2, 'https://www.messenger.com');
-    });
-    return res;
-  };
+const saveCookies = async res => {
+  const allCookies = await getCookies();
+  var cookies = cookiesStringArray(allCookies) || [];
+
+  cookies.forEach(function(c) {
+    if (c.indexOf('.facebook.com') > -1) {
+      setFromResponse('https://www.facebook.com', c);
+    }
+    var c2 = c.replace(/domain=\.facebook\.com/, 'domain=.messenger.com');
+    // c2 = `meesenger_${c2}`;
+    setFromResponse('https://www.messenger.com', c2);
+  });
+  const allCookiesX = await getCookies();
+  // debugger;
+  return res;
 };
 
 const getHeaders = (url, options) => {
@@ -113,7 +145,9 @@ const getHeaders = (url, options) => {
     Referer: 'https://www.facebook.com/',
     Host: url.replace('https://', '').split('/')[0],
     Origin: 'https://www.facebook.com',
-    'User-Agent': options?.userAgent || 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36', 
+    'User-Agent':
+      options?.userAgent ||
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18',
     Connection: 'keep-alive',
   };
 
@@ -121,7 +155,7 @@ const getHeaders = (url, options) => {
 };
 
 const request = op => {
-  console.log('request is', op);
+  // console.log('request is', op);
   /** ops
    * gzip: true
 headers: {Content-Type: "application/x-www-form-urlencoded", Referer: "https://www.facebook.com/", Host: "www.facebook.com", Origin: "https://www.facebook.com", User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) Ap…(KHTML, like Gecko) Version/8.0.3 Safari/600.3.18", …}
@@ -137,11 +171,13 @@ url: "https://www.facebook.com/"
     headers: {
       ...op.headers,
       'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18',
     },
   };
-  debugger;
-  return axios.request(options);
+  console.log(`request type ${op.method}`, op.url, options);
+  // debugger;
+  // return axios('https://github.com/react-native-community/react-native-webview/blob/master/docs/Reference.md#onnavigationstatechange');
+  return axios(options.url, options);
 };
 
 const get = (url, qs, options) => {
@@ -161,12 +197,16 @@ const get = (url, qs, options) => {
     method: 'GET',
     jar: null,
     gzip: true,
+    withCredentials: true,
   };
 
+  console.log('@@@@@@@@@@get options', op);
   return request(op).then(function(res) {
+    console.log('@@@@@@@@@@get res is', res);
     debugger;
     return {
       body: res?.data,
+      ...res,
     };
   });
 };
@@ -206,8 +246,9 @@ const formatCookie = (arr, url) => {
 };
 
 const getCookies = async url => {
-  const cookies = await CookieManager.get(url);
-  console.log('CookieManager.get =>', cookies);
+  const cookies = await CookieManager.getAll(); // await CookieManager.get(url);
+  console.log('CookieManager.get all =>', cookies);
+  // debugger;
   return cookies;
 };
 
@@ -217,7 +258,7 @@ const getAppState = () => {
     .concat(getCookies('https://www.messenger.com'));
 };
 
-const post = (url, form, options) => {
+const post = async (url, form, options) => {
   var op = {
     headers: getHeaders(url, options),
     timeout: 60000,
@@ -226,10 +267,27 @@ const post = (url, form, options) => {
     form: form,
     jar: null,
     gzip: true,
+    withCredentials: true,
+  };
+
+  const cookies = await getCookies();
+  var cookiesArray = cookiesStringArray(cookies);
+
+  debugger;
+  // const setCookieResponse1 = await setCookie(cookies.sb.domain, cookies.sb);
+  // const setCookieResponse2 = await setCookie(cookies.fr.domain, cookies.fr);
+  // const setCookieResponse3 = await setCookie(cookies.datr.domain, cookies.datr);
+  // console.log('setcokkies', setCookieResponse1, setCookieResponse2, setCookieResponse3);
+
+  op.headers = {
+    ...op.headers,
+    setCookie: cookiesArray,
   };
   debugger;
-  return request(op).then(function(res) {
+  return request(op).then(async res => {
+    // const cookies = await getCookies();
     debugger;
+
     return {
       ...res,
       body: res.data,
@@ -237,22 +295,30 @@ const post = (url, form, options) => {
   });
 };
 
-const postFormData = (url, form, qs, options) => {
+const postFormData = (url, form, qs, options, cookies) => {
   var headers = getHeaders(url, options);
+  debugger;
   headers['Content-Type'] = 'multipart/form-data';
   var op = {
-    headers: headers,
+    headers: {
+      ...headers,
+      Cookie: cookies,
+    },
     timeout: 60000,
     url: url,
     method: 'POST',
     formData: form,
-    qs: qs,
-    jar: null,
+    params: qs,
     gzip: true,
+    withCredentials: true,
   };
 
   return request(op).then(function(res) {
-    return res[0];
+    debugger;
+    return {
+      ...res,
+      body: res?.data,
+    };
   });
 };
 
@@ -370,7 +436,7 @@ const presenceDecode = str => {
   );
 };
 
-const generatePresenc = userID => {
+const generatePresence = userID => {
   var time = Date.now();
   return (
     'E' +
@@ -448,12 +514,37 @@ const generateAccessiblityCookie = () => {
 // }
 
 const setFromResponse = (domain, cookie) => {
-  debugger;
+  // debugger;
   CookieManager.setFromResponse(domain, cookie).then(res => {
-    debugger;
+    // debugger;
     // `res` will be true or false depending on success.
     console.log('CookieManager.setFromResponse =>', res);
   });
+};
+const formatID = id => {
+  if (id != undefined && id != null) {
+    return id.replace(/(fb)?id[:.]/, '');
+  } else {
+    return id;
+  }
+};
+
+const makeParsable = html => {
+  let withoutForLoop = html.replace(/for\s*\(\s*;\s*;\s*\)\s*;\s*/, '');
+
+  // (What the fuck FB, why windows style newlines?)
+  // So sometimes FB will send us base multiple objects in the same response.
+  // They're all valid JSON, one after the other, at the top level. We detect
+  // that and make it parse-able by JSON.parse.
+  //       Ben - July 15th 2017
+  //
+  // It turns out that Facebook may insert random number of spaces before
+  // next object begins (issue #616)
+  //       rav_kr - 2018-03-19
+  let maybeMultipleObjects = withoutForLoop.split(/\}\r\n *\{/);
+  if (maybeMultipleObjects.length === 1) return maybeMultipleObjects;
+
+  return '[' + maybeMultipleObjects.join('},{') + ']';
 };
 
 export {
@@ -473,10 +564,13 @@ export {
   log,
   presenceEncode,
   presenceDecode,
-  generatePresenc,
+  generatePresence,
   generateAccessiblityCookie,
   cheerio,
   post,
   postFormData,
   setFromResponse,
+  formatID,
+  makeParsable,
+  cookiesStringArray,
 };
