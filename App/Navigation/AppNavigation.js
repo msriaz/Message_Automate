@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import LaunchScreen from '../Containers/LaunchScreen';
 import AuthLoadingScreen from '../Screens/AuthLoadingScreen';
 import DashboardScreen from '../Screens/App/DashboardScreen';
+import FriendList from '../Screens/App/FriendList';
 import ForgotPasswordScreen from '../Screens/Auth/ForgotPasswordScreen';
 import LoginScreen from '../Screens/Auth/LoginScreen';
 import RegisterScreen from '../Screens/Auth/RegisterScreen';
@@ -20,12 +21,13 @@ const PrimaryNav = createStackNavigator(
     RegisterScreen: {screen: RegisterScreen},
     DashboardScreen: {screen: DashboardScreen},
     ForgotPasswordScreen: {screen: ForgotPasswordScreen},
-    AuthLoadingScreen: {screen: AuthLoadingScreen},
+    AuthLoadingScreen: { screen: AuthLoadingScreen },
+    FriendList: {screen: FriendList},
   },
   {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'AuthLoadingScreen',
+    initialRouteName: 'FriendList',//'AuthLoadingScreen',
     navigationOptions: {
       headerStyle: styles.header,
     },

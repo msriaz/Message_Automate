@@ -1,40 +1,50 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { TouchableOpacity, Text } from 'react-native'
-import styles from './Styles/RoundedButtonStyles'
-import ExamplesRegistry from '../Services/ExamplesRegistry'
+import React, { memo } from "react";
+import { StyleSheet } from "react-native";
+import { Button as PaperButton } from "react-native-paper";
+import { Colors, Metrics } from '../Themes';
 
-// Note that this file (App/Components/RoundedButton) needs to be
-// imported in your app somewhere, otherwise your component won't be
-// compiled and added to the examples dev screen.
 
-// Ignore in coverage report
-/* istanbul ignore next */
-ExamplesRegistry.addComponentExample('Rounded Button', () =>
-  <RoundedButton
-    text='real buttons have curves'
-    onPress={() => window.alert('Rounded Button Pressed!')}
-  />
-)
+const BTN_BACKGROUND_COLOR = {
+  outlined: Colors.surface,
+  contained: Colors.primary,
+};
 
-export default class RoundedButton extends Component {
-  static propTypes = {
-    onPress: PropTypes.func,
-    text: PropTypes.string,
-    children: PropTypes.string,
-    navigator: PropTypes.object
+const BTN_LABEL_COLOR = {
+  outlined: Colors.primary,
+  contained: Colors.white,
+};
+
+const RoundedButton = ({ mode, style, width, children, ...props }) => (
+  <PaperButton
+    style={[
+      styles.button,
+      {
+        backgroundColor: BTN_BACKGROUND_COLOR[mode],
+        width: Metrics.screenWidth * width,
+      },
+      style
+    ]}
+    labelStyle={[
+      styles.text,
+      { color: BTN_LABEL_COLOR[mode] }
+    ]}
+    mode={mode}
+    {...props}
+  >
+    {children}
+  </PaperButton>
+);
+
+const styles = StyleSheet.create({
+  button: {
+    width: "100%",
+    marginVertical: 10,
+    borderRadius: 20
+  },
+  text: {
+    fontWeight: "bold",
+    fontSize: 12,
   }
+});
 
-  getText () {
-    const buttonText = this.props.text || this.props.children || ''
-    return buttonText.toUpperCase()
-  }
-
-  render () {
-    return (
-      <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-        <Text style={styles.buttonText}>{this.getText()}</Text>
-      </TouchableOpacity>
-    )
-  }
-}
+export default memo(RoundedButton);

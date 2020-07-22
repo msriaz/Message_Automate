@@ -47,7 +47,7 @@ const testLogin = () => {
 const Dashboard = () => (
   <Background>
     <Logo />
-    <Header>Let’s start</Header>
+    <Header>Let’s start Rabeeb</Header>
     <Paragraph>
       Your amazing app starts here. Open you favourite code editor and start
       editing this project.

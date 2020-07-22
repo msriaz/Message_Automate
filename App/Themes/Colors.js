@@ -28,6 +28,16 @@ const colors = {
   text: '#E0D7E5',
   transparent: 'rgba(0,0,0,0)',
   windowTint: 'rgba(0, 0, 0, 0.4)',
+
+  // transparent: 'rgba(0,0,0,0)',
+  surface: '#ffffff',
+  // white: '#ffffff',
+  // text: '#212529',
+  // primary: '#007bff',
+  // success: '#28a745',
+  // error: '#dc3545',
+  // lightGreen: '#A6CE39',
+  // darkGreen: '#00AAAD',
 }
 
 export default colors

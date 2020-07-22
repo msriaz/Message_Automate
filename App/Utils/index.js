@@ -18,3 +18,7 @@ export const nameValidator = name => {
 
     return "";
 };
+
+export const truncateText = (text, limit) => {
+    return text?.length > limit ? text.substr(0, limit) + '...' : text
+  }

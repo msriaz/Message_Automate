@@ -6,7 +6,7 @@ import Background from '../../Components/Background';
 import Button from '../../Components/Button';
 import {Colors} from '../../Themes';
 import {login} from '../../ExternalModules/fbLogin';
-import {LoginScreenComponent} from './login';
+// import {LoginScreenComponent} from './login';
 import {
   LoginButton,
   AccessToken,
@@ -182,5 +182,5 @@ const AuthLoadingScreen = ({navigation}) => {
     </Background>
   );
 };
-// export default memo(AuthLoadingScreen);
-export default memo(LoginScreenComponent);
+export default memo(AuthLoadingScreen);
+// export default memo(LoginScreenComponent);
